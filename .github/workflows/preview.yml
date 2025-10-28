@@ -17,11 +17,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           REPO="${GITHUB_REPOSITORY}"
-          PR_NUM="${{ github.event.pull_request.number }}"
           BRANCH="${{ github.event.pull_request.head.ref }}"
 
           PREVIEW_URL="https://htmlpreview.github.io/?https://raw.githubusercontent.com/${REPO}/refs/heads/${BRANCH}/index.html"
 
-          COMMENT="🚀 Preview ready: ${PREVIEW_URL}"
+          echo "PREVIEW_URL=${PREVIEW_URL}" >> $GITHUB_ENV
 
-          gh pr comment "$PR_NUM" --body "$COMMENT"
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            🚀 Preview ready:
+            ${{ env.PREVIEW_URL }}
