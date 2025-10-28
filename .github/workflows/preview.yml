@@ -1,0 +1,27 @@
+name: Preview Comment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get PR info
+        uses: actions-ecosystem/action-get-merged-pull-request@v1
+        id: pr
+
+      - name: Create Preview Comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${GITHUB_REPOSITORY}"
+          PR_NUM="${{ github.event.pull_request.number }}"
+          BRANCH="${{ github.event.pull_request.head.ref }}"
+
+          PREVIEW_URL="https://htmlpreview.github.io/?https://raw.githubusercontent.com/${REPO}/refs/heads/${BRANCH}/index.html"
+
+          COMMENT="🚀 Preview ready: ${PREVIEW_URL}"
+
+          gh pr comment "$PR_NUM" --body "$COMMENT"
