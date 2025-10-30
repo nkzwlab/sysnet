@@ -15,7 +15,7 @@ jobs:
           REPO="${GITHUB_REPOSITORY}"
           BRANCH="${{ github.event.pull_request.head.ref }}"
 
-          PREVIEW_URL="https://htmlpreview.github.io/?https://raw.githubusercontent.com/${REPO}/refs/heads/${BRANCH}/index.html"
+          PREVIEW_URL="https://htmlpreview.github.io/?https://raw.githubusercontent.com/${REPO}/refs/heads/${BRANCH}/public/index.html"
 
           echo "PREVIEW_URL=${PREVIEW_URL}" >> $GITHUB_ENV
 
