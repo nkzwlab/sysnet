@@ -41,16 +41,35 @@
                     <td></td>
                     <td>
                         <details>
-                            <summary>PilotQ：エッジデバイス推論における確率的スケジューリングのための階層型メタ制御アーキテクチャ</summary>
+                            <summary>Overcoming eBPF Constraints: Towards Practical ML/NN-based Anomaly Detection（Journal of
+                                Information Processing 2026）
+                            </summary>
                             <fieldset>
                                 <legend>Abstract</legend>
                                 <small>
-                                    エッジ推論システムは対象がスパースかつ非定常に出現する環境において計算リソースを浪費しやすいが，既存の確率的スケジューラ JumpQ
-                                    は静的なパラメータ依存のため実環境での変化に追従できない．この限界は，従来定義されてこなかったミリ秒スケールの観測ノイズ，秒スケールの短期変動，分スケールの中期変動，さらには時間スケールの長期変動という，四層にわたる時間的不確実性を単一のシステム内で協調的に解決する手法が確立されていない点に起因する．これを解決するため，本研究では制御工学のタイムスケール分離原理を適用し，各時間的不確実性層ごとに専用制御ループを割り当てる階層型メタ制御アーキテクチャ
-                                    PilotQ を提案する．PilotQ
-                                    は入力対状態安定性を形式的に保証し，シミュレーションによって実環境変化への自律的追従による計算リソース効率の最適化を実現できることを示す．
+                                    Machine learning (ML) and neural networks (NN) in extended Berkeley Packet Filter
+                                    (eBPF) and eXpress Data Path (XDP) are being explored for network anomaly detection
+                                    to balance accuracy and throughput. However, eBPF's constraints, such as the
+                                    instruction count limitation and the absence of floating-point support, make the
+                                    implementation of such algorithms challenging. While previous works use workarounds,
+                                    they lack cost analysis of the workarounds and performance comparisons with the user
+                                    space approach. This paper investigates the practicality of overcoming these
+                                    constraints in the context of ML/NN-based anomaly detection through evaluations of
+                                    the cost and the impact of workarounds. We show that while instruction count is not
+                                    a major concern, arithmetic errors in static fixed-point calculations negatively
+                                    affect feature extraction and detection accuracy. However, we also show that dynamic
+                                    fixed-point can match the detection accuracy in kernel space with that in user space.
+                                    Furthermore, we demonstrate that the performance gap between eBPF/XDP and faster
+                                    kernel-bypass technologies narrows to just 7% in ML/NN-based anomaly detection
+                                    contexts. We conclude that ML/NN-based anomaly detection in eBPF/XDP is not only
+                                    feasible but beneficial for real-world deployments compared to alternatives.
                                 </small>
                             </fieldset>
+                            <small>
+                                <i>—Related Link:
+                                    <a href="https://doi.org/10.2197/ipsjjip.34.925">Journal of Information Processing,
+                                        Vol. 34, pp. 925–934 (2026)</a></i>
+                            </small>
                         </details>
                     </td>
                 </tr>
@@ -257,7 +276,7 @@
                 Contact: <a id="e"></a><br>
                 KG Leader: shimi-ryo<br>
                 Lab room: 慶應義塾大学湘南藤沢キャンパス Δ館 南213<br>
-                &copy; 2025 Nakazawa and Okoshi Laboratory
+                &copy; 2026 Nakazawa and Okoshi Laboratory
             </small></p>
     </footer>
 
